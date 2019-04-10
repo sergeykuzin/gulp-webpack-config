@@ -1,0 +1,22 @@
+doctype html
+html(lang="ru", dir="ltr", class="no-js")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible", content="ie=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		//- The page title is shorter than 65 characters
+		block title
+		//- The description of the site inside the tag is unique and does not exceed 150 characters.
+		meta(name="description", content="Description of the site")
+		//- Recommended favicon format
+		//- <link rel="icon" type="image/png" href="https://example.com/favicon.png">
+		link(rel="stylesheet", href="css/core.css")
+		block stylesheet
+
+		script
+			| document.createElement( "picture" );
+		script(src="js/vendor/picturefill.js", async)
+		
+	body
+		block content
+		script(src="js/vendor/svgxuse.js")
