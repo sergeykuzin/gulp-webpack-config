@@ -9,7 +9,8 @@
     "webpack-build": "webpack --config webpack.config.prod.js",
     "webpack-watch": "webpack --config webpack.config.dev.js --watch",    
     "serve": "gulp dev && yarn webpack-dev && gulp serve",
-    "build": "gulp build && yarn webpack-build"
+    "build": "gulp build && yarn webpack-build",
+    "commit": "npx git-cz"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
