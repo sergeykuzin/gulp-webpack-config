@@ -8,15 +8,17 @@
     "webpack-dev": "webpack --config webpack.config.dev.js",
     "webpack-build": "webpack --config webpack.config.prod.js",
     "webpack-watch": "webpack --config webpack.config.dev.js --watch",    
-    "serve": "gulp dev && yarn webpack-dev && gulp serve",
     "build": "gulp build && yarn webpack-build",
     "commit": "npx git-cz"
+    "dev-watch": "concurrently \"gulp serve\" \"yarn webpack-watch\"",
+    "serve": "gulp dev && yarn webpack-dev && yarn dev-watch"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "babel-loader": "^8.0.5",
     "browser-sync": "^2.26.3",
+    "concurrently": "^5.0.2",
     "cz-conventional-changelog": "3.0.2",
     "del": "^4.0.0",
     "gulp": "^4.0.0",
