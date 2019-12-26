@@ -168,6 +168,7 @@ function serve() {
 
   gulp.watch('./src/sass/**/*.scss', buildCss);
   gulp.watch('./src/pug/**/*.pug', buildHtml);
+  gulp.watch('./src/js/**/*.js').on('change', browserSync.reload);
 }
 exports.serve = serve;
 
