@@ -1,1 +1,1 @@
-$yarn            // установить все зависимости из файла package.json
+My config
