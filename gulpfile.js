@@ -101,14 +101,14 @@ function createWebp() {
     '!./src/img/icon-raster/**',
     '!./src/img/icon-vector/**'], {
     nodir: true,
-    })
+  })
     .pipe(webp({ quality: 90 }))
     .pipe(gulp.dest('./src/img/webp/'));
 }
 exports.createWebp = createWebp;
 
 // Add hash to file name
-function hashForCss() { 
+function hashForCss() {
   return gulp.src('./dist/css/*.css')
     .pipe(rev())
     .pipe(revdel())
@@ -120,7 +120,7 @@ function hashForCss() {
 exports.hashForCss = hashForCss;
 
 // Replacing HTML links for CSS with new CSS names with hashes
-function replaceCssHashLinkInHtml() { 
+function replaceCssHashLinkInHtml() {
   return gulp.src([
     'src/manifest-for-hash-css/*.json', 'dist/*.html'])
     .pipe(revCollector({
@@ -133,7 +133,7 @@ function replaceCssHashLinkInHtml() {
 }
 exports.replaceCssHashLinkInHtml = replaceCssHashLinkInHtml;
 
-//Copy source to production folder
+// Copy source to production folder
 function copy() {
   return gulp.src([
     './src/fonts/**',
@@ -178,7 +178,8 @@ exports.dev = gulp.series(
   buildHtml,
   buildCss,
   vectorSprite,
-  copy);
+  copy,
+);
 
 // Build for production
 exports.build = gulp.series(
@@ -190,4 +191,5 @@ exports.build = gulp.series(
   vectorSprite,
   replaceCssHashLinkInHtml,
   createWebp,
-  copy);
+  copy,
+);
