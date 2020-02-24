@@ -52,7 +52,6 @@ function buildCss() {
     './src/sass/pages/*.scss'])
     .pipe(sass())
     .pipe(autoprefixer({
-      browsers: ['last 3 versions'],
       cascade: false,
     }))
     .pipe(csso({ restructure: true }))
