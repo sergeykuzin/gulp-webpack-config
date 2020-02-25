@@ -10,7 +10,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist/js'),
-    filename: 'bundle.[contenthash].js'
+    filename: 'bundle.[contenthash].js',
   },
 
   module: {
@@ -21,18 +21,18 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/template-html-for-webpack/index.html',
       filename: path.resolve(__dirname, 'dist/index.html'),
-      chunks: ['index']
+      chunks: ['index'],
     }),
-  ]
+  ],
 };
